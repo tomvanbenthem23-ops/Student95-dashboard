@@ -2,16 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #f4f6fc;
+  --surface: #fff;
+  --surface2: #f0f3fb;
+  --ink: #15182b;
+  --txt: #15182b;
+  --muted: #5f6478;
+  --faint: #b7bed4;
+  --line: rgba(21, 24, 43, 0.1);
+  --line2: rgba(21, 24, 43, 0.18);
+  --blue: #3855e5;
+  --blue-dark: #2f47bf;
+  --blue-light: #5971e9;
+  --blue-lightest: #d7ddfa;
+  --navy: #1b2358;
+  --navy-lightest: #e7ebf8;
+  --navy-2: #2c3a8c;
+  --head-bg: rgba(230, 236, 251, 0.92);
+  --head-line: rgba(56, 85, 229, 0.2);
+  --accent: #fe4624;
+  --accent-dark: #cb381c;
+  --accent-lightest: #feece9;
+  --shadow: 0 1px 2px rgba(21, 24, 43, 0.05), 0 8px 24px rgba(21, 24, 43, 0.06);
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+}
+
+/* ── inline "Tekst bewerken"-stand ── */
+body:not(.editing) .edonly {
+  display: none !important;
+}
+body.editing [data-editable] {
+  outline: 1px dashed var(--blue-light);
+  outline-offset: 3px;
+  border-radius: 3px;
+  cursor: text;
+}
+body.editing [data-editable]:hover {
+  background: #eef2fe;
+}
+body.editing [data-editable]:focus {
+  outline: 2px solid var(--blue);
+  background: #fff;
+}
+[data-editable][data-leeg='true']::before {
+  content: attr(data-ph);
+  color: var(--faint);
+  font-style: italic;
+}
+
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
+input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;

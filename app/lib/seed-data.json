@@ -1,0 +1,282 @@
+{
+  "_readme": "Pure data export from the current Student95 dashboard (index.html), extracted for migration to a new web app template. Contains only the built-in default data — user-entered overrides that live in the Redis store (status_*, note_*, bestuur_*, txt_*, list_*, ver_*, cm_*, events_<city>) are NOT included here, since those are per-deployment runtime data, not source data. See Sales_dashboard_prompt.md for how this file is meant to be used.",
+
+  "statuses": [
+    "Nog niet benaderd",
+    "Benaderd",
+    "Afspraak gepland",
+    "Bezocht",
+    "Follow-up gepland",
+    "Deal gesloten"
+  ],
+
+  "tierDescriptions": {
+    "A": "Grootste omzetpotentie — persoonlijk bezoeken, eerste prioriteit bij bestuurswissel.",
+    "B": "Goede kansen — city manager pakt deze op na de A-tier.",
+    "C": "Opportunistisch — benaderen per mail/telefoon, bezoeken als het op de route past."
+  },
+
+  "cities": [
+    {
+      "id": "groningen", "naam": "Groningen",
+      "intro": "Thuisbasis van Student95 — hier moeten we marktleider zijn. Vindicat en Albertus zijn samen goed voor ±5.700 leden, en de RUG-studieverenigingen (EBF, JFV, VIP) zitten geconcentreerd rond de Zernike-campus en de binnenstad.",
+      "route": "Alles op fietsafstand. Ochtend: Zernike (EBF, MARUG — Nettelbosje 2, kamers overdag bemand, binnenlopen kan). Middag: binnenstad voor bestuursafspraken bij Vindicat (Grote Markt 27) en Albertus (Brugstraat 8). Roeiverenigingen (Aegir, Gyas) op afspraak bij het botenhuis, doordeweeks eind van de middag als besturen aanwezig zijn.",
+      "verenigingen": [
+        {"naam":"G.S.C. Vindicat atque Polit","type":"Corps","leden":"±3.000","pot":"A","web":"vindicat.nl","email":"abactis@vindicat.nl","tel":"050-3048051","adres":"Sociëteit Mutua Fides, Grote Markt 27","note":"Grootste vereniging van Groningen. Veel jaarclubs en subverenigingen; benader de abactis voor een bestuursafspraak."},
+        {"naam":"R.K.S.V. Albertus Magnus","type":"Gezelligheid","leden":"±2.700","pot":"A","web":"albertus.nl","email":"abactis@albertus.nl","adres":"Sociëteit Ons Eigen Huis, Brugstraat 8","note":"Tweede grote vereniging; disputen en jaarclubs kopen structureel merch."},
+        {"naam":"EBF","type":"Studie · economie & bedrijfskunde (RUG)","leden":"±6.000","pot":"A","web":"ebfgroningen.nl","email":"info@ebfgroningen.nl","tel":"06-13775962","adres":"Nettelbosje 2 (Zernike)","note":"Grootste studievereniging van het noorden. Tientallen commissies + EBF Conference merch. Contact geverifieerd."},
+        {"naam":"JFV Groningen","type":"Studie · rechten (RUG)","leden":"±4.000","pot":"A","web":"jfvgroningen.nl","adres":"Binnenstad (rechtenfaculteit)","note":"Grote rechtenvereniging; formele events en commissiekleding."},
+        {"naam":"A.G.S.R. Gyas","type":"Roeien","leden":"±900","pot":"A","web":"gyas.nl","adres":"Hoornsediep 199","note":"Grootste roeivereniging van Groningen; teamkleding jaarlijks terugkerend."},
+        {"naam":"G.S.R. Aegir","type":"Roeien","leden":"±700","pot":"A","web":"gsraegir.nl","adres":"Stockholmstraat 10","note":"Tweede roeivereniging; sterke wedstrijdcultuur, blazers en toerkleding."},
+        {"naam":"A.S.V. Dizkartes","type":"Gezelligheid","leden":"±700","pot":"B","web":"dizkartes.nl","email":"info@dizkartes.nl","note":"Middelgrote algemene vereniging met eigen sociëteit."},
+        {"naam":"Cleopatra A.S.G.","type":"Gezelligheid","leden":"±800","pot":"B","web":"cleopatra-groningen.nl","email":"voorzitter@cleopatra-groningen.nl","note":"Actieve algemene vereniging; voorzitter direct bereikbaar per mail."},
+        {"naam":"Unitas S.G.","type":"Gezelligheid","leden":"±500","pot":"B","web":"unitassg.nl","email":"info@unitassg.nl","note":"Oude vereniging (1911) in de binnenstad."},
+        {"naam":"MARUG","type":"Studie · marketing (RUG)","leden":"±2.000","pot":"B","web":"marug.nl","tel":"06-40225449","adres":"Nettelbosje 2 (Zernike)","note":"Marketingvereniging; congres- en commissiekleding. Contact geverifieerd."},
+        {"naam":"VIP","type":"Studie · psychologie (RUG)","leden":"±3.000","pot":"B","web":"vipsite.nl","note":"Grote psychologievereniging."},
+        {"naam":"M.F.V. Panacea","type":"Studie · geneeskunde (RUG)","leden":"±3.000","pot":"B","zoek":"Panacea Groningen medische faculteitsvereniging contact","note":"Medische faculteitsvereniging; coschap- en commissiekleding."},
+        {"naam":"TBV Lugus","type":"Studie · technische bedrijfskunde (RUG)","leden":"±1.500","pot":"B","zoek":"TBV Lugus Groningen contact","note":"Technisch-bedrijfskundige vereniging op Zernike."},
+        {"naam":"Clio","type":"Studie · IRIO (RUG)","leden":"±1.500","pot":"C","zoek":"Clio Groningen IRIO studievereniging contact","note":"Internationale betrekkingen; veel reizen en events."},
+        {"naam":"GLV Idun","type":"Studie · biologie (RUG)","leden":"±2.000","pot":"C","zoek":"GLV Idun Groningen contact","note":"Levenswetenschappen, actieve commissies."},
+        {"naam":"GSAVV Forward","type":"Sport · voetbal","leden":"±500","pot":"C","zoek":"GSAVV Forward Groningen contact","note":"Studentenvoetbal; teamtenues via sponsordeals."},
+        {"naam":"N.S.G.","type":"Gezelligheid · christelijk","leden":"±400","pot":"C","zoek":"Navigators Studentenvereniging Groningen contact","note":"Navigators; hechte community."},
+        {"naam":"F.F.J. Bernlef","type":"Gezelligheid · Fries","leden":"±200","pot":"C","zoek":"Bernlef Groningen Friese studentenvereniging","note":"Kleine maar loyale vereniging."}
+      ]
+    },
+    {
+      "id": "amsterdam", "naam": "Amsterdam",
+      "intro": "Grootste studentenstad, meeste concurrentie. Prioriteit: de mega-studieverenigingen (Sefa, Aureus) vóór de bestuurswissel binnen zijn, en via ASC/AVSV de disputenmarkt openen.",
+      "route": "Plan bestuursafspraken tussen 10:00 en 17:00. Studieverenigingen hebben overdag bemande kamers — bij Sefa (Roetersstraat 11) en VSPA kun je op Roeterseiland gewoon binnenlopen. Combineer: ochtend UvA (Roeterseiland), middag VU (De Boelelaan). Sociëteiten uitsluitend op afspraak via mail/telefoon vooraf.",
+      "verenigingen": [
+        {"naam":"A.S.C./A.V.S.V.","type":"Corps","leden":"±2.700","pot":"A","web":"asc-avsv.nl","tel":"020-5238010","adres":"Sociëteit N.I.A., Warmoesstraat 153","note":"Grootste vereniging van NL, 38 disputen + jaarclubs. Benader de Senaat schriftelijk voor een afspraak; mik op disputen-pakketten."},
+        {"naam":"L.A.N.X.","type":"Gezelligheid","leden":"±900","pot":"A","web":"lanx.nl","tel":"020-6264587","adres":"Nieuwezijds Voorburgwal 167","note":"VU-corps. Jaarclubs, disputen en commissies."},
+        {"naam":"Sefa","type":"Studie · economie (UvA)","leden":"±5.000","pot":"A","web":"sefa.nl","tel":"020-5254024","adres":"Roetersstraat 11, kamer E0.02","note":"Kamer overdag bemand — binnenlopen kan. Enorm veel commissies; wees er vóór september bij."},
+        {"naam":"Aureus","type":"Studie · business (VU)","leden":"±4.000","pot":"A","web":"aureus.nl","adres":"De Boelelaan 1105 (VU hoofdgebouw)","adresCheck":true,"note":"Zelfde speelboek als Sefa; grote intro- en congrescommissies."},
+        {"naam":"A.S.R. Nereus","type":"Roeien","leden":"±800","pot":"A","web":"nereus.nl","tel":"020-6797117","adres":"Amsteldijk 130a","adresCheck":true,"note":"Grote roeivereniging; team-, toer- en lustrumkleding."},
+        {"naam":"S.S.R.A.","type":"Gezelligheid","leden":"±500","pot":"B","web":"ssra.nl","tel":"020-6239437","adres":"Sociëteit Pylades, Leidsegracht 108","note":"Hecht en middelgroot; minder leveranciersconcurrentie dan bij het corps."},
+        {"naam":"VSPA","type":"Studie · psychologie (UvA)","leden":"±2.500","pot":"B","web":"vspa.nl","adres":"Roeterseiland (REC)","note":"Actieve commissiecultuur, hoodies per jaarlaag."},
+        {"naam":"MFAS","type":"Studie · geneeskunde (UvA)","leden":"±3.000","pot":"B","zoek":"MFAS UvA bestuur contact","adres":"AMC, Meibergdreef 9","adresCheck":true,"note":"Coschap- en commissiekleding populair."},
+        {"naam":"JFAS","type":"Studie · rechten (UvA)","leden":"±2.500","pot":"B","zoek":"JFAS UvA rechten contact","note":"Rechtenvereniging UvA; formele events."},
+        {"naam":"VSAE","type":"Studie · econometrie (UvA)","leden":"±1.200","pot":"B","zoek":"VSAE UvA econometrie contact","adres":"Roetersstraat 11","note":"Kleiner maar kapitaalkrachtig (congressen, cases)."},
+        {"naam":"A.S.R. Skøll","type":"Roeien","leden":"±700","pot":"B","zoek":"ASR Skoll Amsterdam botenhuis contact","note":"Tweede grote roeivereniging van Amsterdam."},
+        {"naam":"Kraket","type":"Studie · econometrie (VU)","leden":"±800","pot":"C","zoek":"Kraket VU econometrie contact","note":"VU-tegenhanger van VSAE."},
+        {"naam":"Machiavelli","type":"Studie · politicologie (UvA)","leden":"±1.500","pot":"C","zoek":"Machiavelli UvA politicologie contact","note":"Grote sociale-wetenschappenvereniging."},
+        {"naam":"AEGEE-Amsterdam","type":"Gezelligheid · internationaal","leden":"±600","pot":"C","zoek":"AEGEE-Amsterdam contact","note":"Internationale vereniging, veel reizen en events."},
+        {"naam":"A.S.R. Okeanos","type":"Roeien","leden":"±600","pot":"C","zoek":"ASR Okeanos contact","note":"VU-roeivereniging (Ouderkerk a/d Amstel)."}
+      ]
+    },
+    {
+      "id": "rotterdam", "naam": "Rotterdam",
+      "intro": "Thuismarkt van de EUR: EFR en STAR (samen 12.000+ leden) zijn de grootste studieverenigings-leads van Nederland. Laurentius heeft volledig geverifieerde contactgegevens — plan daar de eerste afspraak.",
+      "route": "Ochtend: campus Woudestein (Burg. Oudlaan 50) — EFR, STAR, JFR, FAECTOR en Cedo Nulli hebben er bemande kamers, binnenlopen overdag kan. Middag: bestuursafspraken in het centrum (Laurentius, SSR-R, RSG). Skadi aan de Rotte op afspraak. Alles binnen 20 minuten fietsen.",
+      "verenigingen": [
+        {"naam":"EFR","type":"Studie · economie (EUR)","leden":"±6.500","pot":"A","web":"efr.nl","adres":"Campus Woudestein, Burg. Oudlaan 50","note":"Grootste studievereniging-lead van NL. Tientallen commissies + EFR Business Week. Commissaris extern benaderen."},
+        {"naam":"STAR (RSM)","type":"Studie · bedrijfskunde (EUR)","leden":"±6.000","pot":"A","web":"rsmstar.nl","adres":"Campus Woudestein, Burg. Oudlaan 50","note":"Professioneel bestuur — kom met portfolio en referenties."},
+        {"naam":"R.S.V. Sanctus Laurentius","type":"Gezelligheid","leden":"±1.400","pot":"A","web":"laurentius.nl","email":"bestuur@laurentius.nl","tel":"010-4535777","adres":"Infirmeriestraat 6-8","note":"Volledig geverifieerd contact. Gemengd, veel disputen — sterke eerste afspraak."},
+        {"naam":"RSC/RVSV","type":"Corps","leden":"±1.600","pot":"A","web":"rsc-rvsv.nl","adres":"Robert Baeldestraat 55","adresCheck":true,"note":"16 onderverenigingen, ±100 corpshuizen → huis- en disputenpakketten."},
+        {"naam":"A.R.S.R. Skadi","type":"Roeien","leden":"±1.000","pot":"A","web":"skadi.nl","adres":"Noorderkanaalweg 20-22 (aan de Rotte)","note":"Een van de grootste roeiverenigingen van NL."},
+        {"naam":"S.S.R.-Rotterdam","type":"Gezelligheid","leden":"±700","pot":"B","web":"ssrr.nl","adres":"Sociëteit Koinoonia, Mauritsweg 29B","note":"Middelgroot, centrum. Contactformulier op de site."},
+        {"naam":"R.S.G.","type":"Gezelligheid","leden":"±500","pot":"B","web":"hetrsg.nl","adres":"Haringvliet 94","note":"Rotterdamsch Studenten Gezelschap; kleiner, toegankelijk bestuur."},
+        {"naam":"FAECTOR","type":"Studie · econometrie (EUR)","leden":"±1.800","pot":"B","zoek":"FAECTOR Rotterdam econometrie contact","adres":"Campus Woudestein","note":"Econometrie; kapitaalkrachtige commissies."},
+        {"naam":"JFR","type":"Studie · rechten (EUR)","leden":"±4.000","pot":"B","web":"jfr.nl","adres":"Campus Woudestein (Sanders-gebouw)","note":"Formele events: blazers, gala-merch."},
+        {"naam":"Cedo Nulli","type":"Studie · sociale wetenschappen (EUR)","leden":"±2.500","pot":"B","web":"cedonulli.nl","adres":"Campus Woudestein (Mandeville)","note":"Actieve commissiestructuur."},
+        {"naam":"MFVR","type":"Studie · geneeskunde (EUR)","leden":"±3.000","pot":"B","zoek":"MFVR Rotterdam medische faculteitsvereniging contact","adres":"Erasmus MC","note":"Coschapkleding en commissietruien."},
+        {"naam":"N.S.R.","type":"Gezelligheid · christelijk","leden":"±400","pot":"C","zoek":"Navigators Studentenvereniging Rotterdam contact","note":"Navigators Rotterdam."},
+        {"naam":"In Duplo","type":"Studie · Hogeschool Rotterdam","leden":"±1.000","pot":"C","zoek":"In Duplo Hogeschool Rotterdam contact","note":"Hbo-vereniging; minder benaderd door concurrenten."},
+        {"naam":"R.S.Z.V. Nautilus","type":"Sport · zeilen","leden":"±300","pot":"C","zoek":"RSZV Nautilus Rotterdam zeilen contact","adres":"Kralingse Plas","note":"Zeilvereniging; teamkleding voor wedstrijden."},
+        {"naam":"ESN Rotterdam","type":"Internationaal","leden":"±1.000","pot":"C","zoek":"ESN Rotterdam contact","note":"Internationale studenten; intro-merch."}
+      ]
+    },
+    {
+      "id": "utrecht", "naam": "Utrecht",
+      "intro": "Sterke traditionele verenigingscultuur: de vier grote gezelligheidsverenigingen liggen op loopafstand van elkaar in het centrum. Plus twee grote roeiverenigingen en zware studieverenigingen (JSVU, A–Eskwadraat).",
+      "route": "Bestuursafspraken overdag clusteren: Janskerkhof 14 (USC) → Drift (UVSV) → Kromme Nieuwegracht 54 (Veritas) → Lucasbolwerk (Unitas, Biton) is 10 minuten lopen. Studieverenigingen op het Utrecht Science Park (A–Eskwadraat, Mebiose) hebben overdag bemande kamers. Orca en Triton op afspraak bij het botenhuis.",
+      "verenigingen": [
+        {"naam":"C.S. Veritas","type":"Gezelligheid","leden":"±1.900","pot":"A","web":"veritas.nl","adres":"Kromme Nieuwegracht 54","note":"Grootste gemengde vereniging van Utrecht; veel disputen en commissies."},
+        {"naam":"U.V.S.V./N.V.V.S.U.","type":"Gezelligheid · vrouwen","leden":"±1.500","pot":"A","web":"uvsv.nl","adres":"Drift 19","adresCheck":true,"note":"Enige volledig vrouwelijke vereniging van NL; jaarclubs kopen structureel."},
+        {"naam":"U.S.C.","type":"Corps","leden":"±900","pot":"A","web":"usconline.nl","adres":"Janskerkhof 14 ('het gele kasteel')","note":"Oudste vereniging van NL. Senaat schriftelijk benaderen."},
+        {"naam":"A.U.S.R. Orca","type":"Roeien","leden":"±1.400","pot":"A","web":"orcaroeien.nl","note":"Een van de grootste roeiverenigingen van NL — groot kledingvolume."},
+        {"naam":"JSVU","type":"Studie · rechten (UU)","leden":"±3.000","pot":"A","web":"jsvu.nl","adres":"Janskerkhof (rechtenfaculteit)","note":"Grote rechtenvereniging, formele events."},
+        {"naam":"Unitas S.R.","type":"Gezelligheid","leden":"±850","pot":"B","web":"usr.nl","adres":"Lucasbolwerk 8","note":"Adres geverifieerd. Toegankelijk bestuur."},
+        {"naam":"U.S.V. Biton","type":"Gezelligheid","leden":"±600","pot":"B","zoek":"USV Biton Utrecht contact","adres":"Lucasbolwerk","adresCheck":true,"note":"Gemengd, centrum; minder benaderd door grote leveranciers."},
+        {"naam":"ECU'92","type":"Studie · economie (UU)","leden":"±2.500","pot":"B","web":"ecu92.nl","adres":"Kriekenpitplein (USE)","adresCheck":true,"note":"Grootste economische studievereniging van Utrecht."},
+        {"naam":"A–Eskwadraat","type":"Studie · bèta (UU)","leden":"±3.500","pot":"B","zoek":"A-Eskwadraat Utrecht contact","adres":"Utrecht Science Park (BBG)","note":"Wiskunde/natuurkunde/informatica — een van de grootste bètaverenigingen van NL."},
+        {"naam":"U.S.R. Triton","type":"Roeien","leden":"±800","pot":"B","web":"usrtriton.nl","note":"Prestatiegericht; wedstrijdkleding en blazers."},
+        {"naam":"Mebiose","type":"Studie · biomedisch (UU)","leden":"±1.500","pot":"B","zoek":"Mebiose Utrecht contact","note":"Biomedische wetenschappen, actieve commissies."},
+        {"naam":"SSR-NU","type":"Gezelligheid","leden":"±400","pot":"C","zoek":"SSR-NU Utrecht contact","note":"Kleinere vereniging, hechte cultuur."},
+        {"naam":"AEGEE-Utrecht","type":"Gezelligheid · internationaal","leden":"±700","pot":"C","zoek":"AEGEE-Utrecht contact","note":"Internationale vereniging."},
+        {"naam":"Sib-Utrecht","type":"Studie · internationale betrekkingen","leden":"±800","pot":"C","zoek":"Sib-Utrecht contact","note":"Wekelijkse lezingen, reizen."},
+        {"naam":"M.S.F.U. 'Sams'","type":"Studie · geneeskunde (UU)","leden":"±2.500","pot":"C","zoek":"MSFU Sams Utrecht geneeskunde contact","note":"Medische faculteitsvereniging."}
+      ]
+    },
+    {
+      "id": "delft", "naam": "Delft",
+      "intro": "Techniekstad met per faculteit enorme studieverenigingen én twee zeer grote gezelligheidsverenigingen. Let op: TU-studieverenigingen hebben soms vaste kledingdeals — vraag er direct naar en positioneer op kwaliteit en levertijd.",
+      "route": "Ochtend/middag: TU-campus — studieverenigingskamers zijn overdag bemand (VSV bij L&R, Leeghwater bij 3mE, ETV en CH bij EWI), daar kun je binnenlopen. Bestuursafspraken bij Virgiel (Oude Delft 57) en DSC (Phoenixstraat 30) overdag inplannen via mail. Botenhuizen (Laga Nieuwelaan 53, Proteus) op afspraak.",
+      "verenigingen": [
+        {"naam":"K.S.V. Sanctus Virgilius","type":"Gezelligheid","leden":"±2.200","pot":"A","web":"virgiel.nl","adres":"Oude Delft 57","note":"Grootste vereniging van Delft; veel jaarclubs en disputen."},
+        {"naam":"D.S.C.","type":"Corps","leden":"±1.800","pot":"A","web":"dsc.nl","adres":"Sociëteit Phoenix, Phoenixstraat 30","note":"Oudste vereniging van Delft (1848); disputenmarkt."},
+        {"naam":"VSV 'Leonardo da Vinci'","type":"Studie · lucht- & ruimtevaart","leden":"±2.800","pot":"A","web":"vsv.tudelft.nl","adres":"Kluyverweg 1 (L&R-faculteit)","adresCheck":true,"note":"Een van de grootste studieverenigingen van NL; commissies + studiereizen."},
+        {"naam":"Gezelschap Leeghwater","type":"Studie · werktuigbouw","leden":"±3.000","pot":"A","web":"leeghwater.nl","adres":"Mekelweg 2 (3mE)","adresCheck":true,"note":"Grootste werktuigbouwvereniging van NL."},
+        {"naam":"D.S.R.V. Laga","type":"Roeien","leden":"±1.000","pot":"A","web":"laga.nl","adres":"Nieuwelaan 53","note":"Grootste botenhuis van NL; blazers en wedstrijdkleding."},
+        {"naam":"Proteus-Eretes","type":"Roeien","leden":"±900","pot":"A","web":"proteus-eretes.nl","adres":"Rotterdamseweg (botenhuis)","adresCheck":true,"note":"Grootste roeivereniging van Delft qua leden."},
+        {"naam":"D.S.V. Sint Jansbrug","type":"Gezelligheid","leden":"±700","pot":"B","web":"sintjansbrug.nl","adres":"Oude Delft 50-52","note":"Adres geverifieerd. Open karakter, actieve commissies."},
+        {"naam":"ETV","type":"Studie · elektrotechniek","leden":"±1.500","pot":"B","web":"etv.tudelft.nl","adres":"Mekelweg 4 (EWI)","adresCheck":true,"note":"Oude, actieve faculteitsvereniging."},
+        {"naam":"W.I.S.V. Christiaan Huygens","type":"Studie · wiskunde & informatica","leden":"±2.000","pot":"B","web":"ch.tudelft.nl","adres":"EWI, TU-campus","note":"Groeit hard met informatica."},
+        {"naam":"Stylos","type":"Studie · bouwkunde","leden":"±1.500","pot":"B","zoek":"Stylos Delft bouwkunde contact","adres":"Julianalaan 134 (BK)","adresCheck":true,"note":"Bouwkundevereniging."},
+        {"naam":"Technologisch Gezelschap","type":"Studie · chemie","leden":"±1.200","pot":"B","zoek":"Technologisch Gezelschap Delft contact","note":"Chemische technologie."},
+        {"naam":"Practische Studie","type":"Studie · civiel","leden":"±1.800","pot":"B","zoek":"Practische Studie Delft civiel contact","adres":"Stevinweg 1 (CiTG)","adresCheck":true,"note":"Civiele techniek."},
+        {"naam":"O.J.V. De Koornbeurs","type":"Gezelligheid","leden":"±400","pot":"C","zoek":"Koornbeurs Delft vereniging contact","adres":"Voldersgracht 1","note":"Alternatieve vereniging in monumentaal pand."},
+        {"naam":"C.S.R. Delft","type":"Gezelligheid · christelijk","leden":"±350","pot":"C","zoek":"CSR Delft studentenvereniging contact","note":"Christelijke vereniging."},
+        {"naam":"S.V.R. Wolbodo","type":"Gezelligheid","leden":"±250","pot":"C","zoek":"Wolbodo Delft contact","note":"Klein en alternatief."},
+        {"naam":"Mijnbouwkundige Vereeniging","type":"Studie · geowetenschappen","leden":"±800","pot":"C","zoek":"Mijnbouwkundige Vereeniging Delft contact","note":"Oudste studievereniging van NL (1892)."}
+      ]
+    },
+    {
+      "id": "zuid", "naam": "Zuid-Nederland",
+      "intro": "Vier steden, één city manager. Grootste kansen: Asset (Tilburg, ±4.000 leden) en Industria (Eindhoven). Concurrentie van gevestigde merch-leveranciers is hier kleiner dan in de Randstad — snel te veroveren markt. Maastricht heeft volledig geverifieerde contactgegevens.",
+      "route": "Dag 1: Eindhoven overdag (TU/e-campus: Industria en GEWIS hebben bemande kamers) → 13:30 door naar Tilburg (30 min): campus Warandelaan (Asset, Magister JFT) en bestuursafspraak bij Plato (Schouwburgring 200) of Olof (Spoorlaan 330). Dag 2: Maastricht — bel vooraf: Circumflex 043-3251088, Tragos 043-3211187, KoKo 043-3213834. Breda (Maximus) koppelen aan de Tilburg-dag (20 min).",
+      "verenigingen": [
+        {"stad":"Eindhoven","naam":"Industria","type":"Studie · technische bedrijfskunde (TU/e)","leden":"±2.000","pot":"A","web":"industria.tue.nl","adres":"TU/e-campus (Atlas)","note":"Grootste studievereniging van Eindhoven; kamer overdag bemand."},
+        {"stad":"Eindhoven","naam":"SSRE","type":"Gezelligheid","leden":"±500","pot":"A","web":"ssre.nl","adres":"Sociëteit Eunaia, Vestdijk 22","note":"Grootste gezelligheidsvereniging van Eindhoven. Adres geverifieerd."},
+        {"stad":"Eindhoven","naam":"E.S.C.","type":"Corps","leden":"±400","pot":"B","zoek":"Eindhovens Studenten Corps contact","adres":"Sociëteit Ilium, Ten Hagestraat 13","note":"Adres geverifieerd. Traditioneel corps."},
+        {"stad":"Eindhoven","naam":"E.S.V. Demos","type":"Gezelligheid","leden":"±300","pot":"B","web":"demos.nl","adres":"'De Keizer', centrum Eindhoven","note":"Jonge cultuur, geen ontgroening, toegankelijk bestuur."},
+        {"stad":"Eindhoven","naam":"GEWIS","type":"Studie · wiskunde & informatica (TU/e)","leden":"±1.500","pot":"B","zoek":"GEWIS Eindhoven contact","adres":"TU/e-campus (MetaForum)","note":"Grote bètavereniging."},
+        {"stad":"Eindhoven","naam":"Thor","type":"Studie · elektrotechniek (TU/e)","leden":"±1.200","pot":"B","zoek":"e.t.s.v. Thor Eindhoven contact","adres":"TU/e-campus (Flux)","note":"Elektrotechniek."},
+        {"stad":"Eindhoven","naam":"E.S.R. Thêta","type":"Roeien","leden":"±500","pot":"B","zoek":"ESR Theta Eindhoven contact","note":"Roeivereniging TU/e."},
+        {"stad":"Eindhoven","naam":"T.S.V. Japie","type":"Studie · chemie (TU/e)","leden":"±800","pot":"C","zoek":"Japie Eindhoven scheikunde contact","note":"Chemische technologie."},
+        {"stad":"Tilburg","naam":"Asset","type":"Studie · economie & business (TiU)","leden":"±4.000","pot":"A","zoek":"Asset Tilburg University contact","adres":"Warandelaan 2 (campus TiU)","adresCheck":true,"note":"Overkoepelend met meerdere departments — één deal opent meerdere subverenigingen."},
+        {"stad":"Tilburg","naam":"T.S.V. Plato","type":"Gezelligheid","leden":"±1.000+","pot":"A","web":"tsvplato.nl","adres":"Schouwburgring 200","note":"Adres geverifieerd. Jongste én grootste vereniging van Tilburg, groeit hard."},
+        {"stad":"Tilburg","naam":"T.S.C. St. Olof","type":"Corps","leden":"±800","pot":"A","web":"olof.nl","adres":"Spoorlaan 330-332","note":"Adres geverifieerd. Traditioneel corps met disputen."},
+        {"stad":"Tilburg","naam":"T.S.R. Vidar","type":"Roeien/sport","leden":"±550","pot":"B","web":"tsr-vidar.nl","note":"Grootste roeicomplex van de Benelux."},
+        {"stad":"Tilburg","naam":"Magister JFT","type":"Studie · rechten (TiU)","leden":"±2.000","pot":"B","zoek":"Magister JFT Tilburg contact","adres":"Warandelaan 2 (campus TiU)","note":"Rechtenvereniging; formele events."},
+        {"stad":"Tilburg","naam":"I*ESN Tilburg","type":"Internationaal","leden":"±800","pot":"C","zoek":"IESN Tilburg contact","note":"Internationale studenten."},
+        {"stad":"Maastricht","naam":"Circumflex","type":"Gezelligheid","leden":"±1.000","pot":"A","web":"circumflex.nl","tel":"043-3251088","adres":"Sociëteit De Kaap, Capucijnenstraat 120","note":"Volledig geverifieerd. Oudste en grootste vereniging van Maastricht."},
+        {"stad":"Maastricht","naam":"M.S.V. Tragos","type":"Gezelligheid","leden":"±800","pot":"A","web":"tragos.nl","tel":"043-3211187","adres":"Fort Koning Willem I, Kastanjelaan 66","note":"Volledig geverifieerd. Sterke disputencultuur."},
+        {"stad":"Maastricht","naam":"S.V. KoKo","type":"Gezelligheid","leden":"±500","pot":"B","zoek":"SV KoKo Maastricht contact","tel":"043-3213834","adres":"Sociëteit de Botermijn, Gebr. Hermansstraat 11-13","note":"Volledig geverifieerd. Inclusief, geen ontgroening."},
+        {"stad":"Maastricht","naam":"SCOPE","type":"Studie · business & economics (UM)","leden":"±3.000","pot":"B","zoek":"SCOPE Maastricht study association","adres":"Tongersestraat 53 (SBE)","adresCheck":true,"note":"Officiële SBE-vereniging; veel internationale studenten (Engelstalige merch)."},
+        {"stad":"Maastricht","naam":"M.S.R.V. Saurus","type":"Roeien","leden":"±450","pot":"B","zoek":"MSRV Saurus Maastricht contact","note":"Roei- én gezelligheidsvereniging met eigen botenhuis."},
+        {"stad":"Breda","naam":"S.V. Maximus","type":"Gezelligheid (Avans/BUas)","leden":"±400","pot":"C","zoek":"SV Maximus Breda contact","email":"senaat@svmaximus.nl","adres":"Sociëteit Het Forum, Havermarkt 12","note":"Geverifieerd contact. Dé vereniging van Breda; geen concurrentie."}
+      ]
+    }
+  ],
+
+  "events": {
+    "amsterdam": [
+      {"d":"1 aug 2026","ev":"Begin Fleurtijd + ontgroening ASC","type":"Introductie / Ontgroening","cp":"","ver":"ASC","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"1 sep 2026","ev":"Lustrum ASC","type":"Lustrum","cp":"","ver":"ASC","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"okt 2026","ev":"Moet week","type":"Feest","cp":"","ver":"ASC","ecm":"aug 2026","ecmIso":"2026-08-01","cmu":""},
+      {"d":"feb 2027","ev":"Hoogtij","type":"feestweek","cp":"","ver":"L.A.N.X","ecm":"dec 2026","ecmIso":"2026-12-01","cmu":""},
+      {"d":"feb 2027","ev":"NIA week","type":"Feest","cp":"","ver":"ASC","ecm":"dec 2026","ecmIso":"2026-12-01","cmu":""},
+      {"d":"apr 2027","ev":"SAO week","type":"Feest","cp":"","ver":"ASC","ecm":"jan 2027","ecmIso":"2027-01-01","cmu":""},
+      {"d":"apr 2027","ev":"Zaal week","type":"Feest","cp":"","ver":"ASC","ecm":"jan 2027","ecmIso":"2027-01-01","cmu":""},
+      {"d":"jun 2027","ev":"Jaarschtruien","type":"Jaarsch","cp":"","ver":"L.A.N.X","ecm":"mrt 2026","ecmIso":"2026-03-01","cmu":""},
+      {"d":"jun 2027","ev":"Hockeytoernooi","type":"Sporttoernooi","cp":"","ver":"L.A.N.X","ecm":"feb 2026","ecmIso":"2026-02-01","cmu":""}
+    ],
+    "rotterdam": [
+      {"d":"apr 2026","ev":"Goudkoorts","type":"Feestweek","cp":"Tom","ver":"Laurentius","ecm":"jan 2026","ecmIso":"2026-01-01","cmu":""},
+      {"d":"8 – 11 apr 2026","ev":"Walhallaweek","type":"Feestweek","cp":"Tom","ver":"RSC","ecm":"1 jan 2026","ecmIso":"2026-01-01","cmu":""},
+      {"d":"5 mei 2026","ev":"Zegevieren","type":"Festival","cp":"Tom","ver":"RSC","ecm":"1 feb 2026","ecmIso":"2026-02-01","cmu":""},
+      {"d":"mei 2026","ev":"Laurentius darts","type":"Darts","cp":"Tom","ver":"Laurentius","ecm":"feb 2026","ecmIso":"2026-02-01","cmu":""},
+      {"d":"mei 2026","ev":"Laurentius boksgala","type":"boksgala","cp":"Tom","ver":"Laurentius","ecm":"feb 2026","ecmIso":"2026-02-01","cmu":""},
+      {"d":"mei 2026","ev":"Rottebokaal","type":"Roeiwedstrijd","cp":"Tom","ver":"SKADI","ecm":"feb 2026","ecmIso":"2026-02-01","cmu":""},
+      {"d":"augustus","ev":"Eurekaweek RSC","type":"introductieweek","cp":"Tom","ver":"RSC","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":"Check"},
+      {"d":"augustus","ev":"Eurekaweek Laurentius","type":"introductieweek","cp":"Tom","ver":"Laurentius","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":"Check"},
+      {"d":"1 sep 2026","ev":"Lustrum Skadi","type":"Lustrum","cp":"Tom","ver":"Studentenroeivereniging Skadi","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":"Check"}
+    ],
+    "utrecht": [
+      {"d":"1 mei 2026","ev":"USHC Lustrum gala","type":"Lustrum","cp":"Tom","ver":"Utrecht Student Hockey Club","ecm":"1 jan 2026","ecmIso":"2026-01-01","cmu":""},
+      {"d":"april","ev":"beatrix usc","type":"feest","cp":"Daan","ver":"usc","ecm":"jan 2026","ecmIso":"2026-01-01","cmu":""},
+      {"d":"mei","ev":"boksbal veritas","type":"feest","cp":"Daan","ver":"veritas","ecm":"feb 2026","ecmIso":"2026-02-01","cmu":""},
+      {"d":"eind novenmber","ev":"Crusa USC","type":"Feest, almanak","cp":"","ver":"USC","ecm":"","ecmIso":null,"cmu":""},
+      {"d":"5 – 22 jul 2026","ev":"Lustrum USC","type":"Lustrum","cp":"De Drukkers","ver":"Utrechtsch Studenten Corps","ecm":"1 mrt 2026","ecmIso":"2026-03-01","cmu":""},
+      {"d":"8 – 12 jul 2026","ev":"Lustrum Unitas","type":"Lustrum","cp":"Daan","ver":"Unitas S.D. Utrecht","ecm":"1 mrt 2026","ecmIso":"2026-03-01","cmu":""},
+      {"d":"10 – 13 aug 2026","ev":"UITweek Utrecht","type":"Introductieweek","cp":"–","ver":"Universiteit Utrecht","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":"check"},
+      {"d":"augustus","ev":"UITweek USC","type":"feest","cp":"Daan","ver":"USC","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":"check"},
+      {"d":"augustus","ev":"UITweek Veritas","type":"feest","cp":"Daan","ver":"veritas","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":"check"},
+      {"d":"augustus","ev":"UITweek unitas","type":"feest","cp":"Daan","ver":"unitas","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":"check"},
+      {"d":"eind oktober","ev":"Ancient party USC","type":"Feest","cp":"Daan","ver":"USC","ecm":"sep 2026","ecmIso":"2026-09-01","cmu":""}
+    ],
+    "delft": [
+      {"d":"6 – 11 jul 2026","ev":"Lustrum Laga","type":"Lustrum","cp":"Iano","ver":"Laaglandse Roeiers","ecm":"1 mrt 2026","ecmIso":"2026-03-01","cmu":""},
+      {"d":"jun 2026","ev":"Lorre festival","type":"Festival","cp":"iano","ver":"","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"17 – 21 aug 2026","ev":"Hopweek","type":"Introductieweek","cp":"Iano","ver":"Den Haag introductie","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"sep 2026","ev":"Eerstejaarsperiode","type":"","cp":"Iano","ver":"","ecm":"jun 2026","ecmIso":"2026-06-01","cmu":"Check"},
+      {"d":"okt 2026","ev":"Eerstejaarsperiode","type":"","cp":"Iano","ver":"","ecm":"jun 2026","ecmIso":"2026-06-01","cmu":"Check"},
+      {"d":"nov 2026","ev":"IGOV","type":"","cp":"Iano","ver":"","ecm":"sep 2026","ecmIso":"2026-09-01","cmu":""},
+      {"d":"feb 2027","ev":"Eerstejaars Valtho","type":"","cp":"Iano","ver":"","ecm":"okt 2026","ecmIso":"2026-10-01","cmu":""},
+      {"d":"mrt 2027","ev":"Kriminelen","type":"Feestweek","cp":"Iano","ver":"","ecm":"dec 2026","ecmIso":"2026-12-01","cmu":""}
+    ],
+    "groningen": [
+      {"d":"sep 2026","ev":"Lustrum Albertus Magnus","type":"Lustrum","cp":"Jim","ver":"Albertus Magnus","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"sep 2026","ev":"Lustrum Io Vivat","type":"Lustrum","cp":"Jim","ver":"Io Vivat","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"augustus","ev":"Keiweek Vindicat","type":"introductieweek","cp":"Jim","ver":"Vindicat","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"augustus","ev":"Keiweek Albertus","type":"introductieweek","cp":"Jim","ver":"Albertus Magnus","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"augustus","ev":"Keiweek Dizcartes","type":"introductieweek","cp":"Jim","ver":"A.S.V. Dizkartes","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"augustus","ev":"Keiweek Io Vivat","type":"introductieweek","cp":"Jim","ver":"Io Vivat","ecm":"mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"november","ev":"Kermesse","type":"Feest","cp":"Jim","ver":"Vindicat","ecm":"sep 2026","ecmIso":"2026-09-01","cmu":""}
+    ],
+    "zuid": [
+      {"d":"jun 2026","ev":"Hoogtevrees","type":"","cp":"Willem","ver":"","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"jul 2026","ev":"dichtgetikt","type":"","cp":"Willem","ver":"","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"jul 2026","ev":"eindejaarscantus","type":"","cp":"Willem","ver":"","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"jul 2026","ev":"Bodemdrift","type":"","cp":"Willem","ver":"","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"aug 2026","ev":"top week (introweek)","type":"","cp":"Willem","ver":"","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"aug 2026","ev":"preau millage","type":"","cp":"Willem","ver":"","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"sep 2026","ev":"Lustrum Olof","type":"Lustrum","cp":"Willem","ver":"T.S.C. St. Olof (Tilburg)","ecm":"1 mei 2026","ecmIso":"2026-05-01","cmu":""},
+      {"d":"jan 2026","ev":"Januari bal","type":"Soort gala","cp":"Willem","ver":"","ecm":"okt 2026","ecmIso":"2026-10-01","cmu":""},
+      {"d":"feb 2026","ev":"Kongsi carnaval","type":"","cp":"Willem","ver":"","ecm":"nov 2026","ecmIso":"2026-11-01","cmu":""},
+      {"d":"feb 2026","ev":"Inmosae","type":"Kroeg feest","cp":"Willem","ver":"","ecm":"nov 2026","ecmIso":"2026-11-01","cmu":""},
+      {"d":"feb 2026","ev":"BBC","type":"grote cantus","cp":"Willem","ver":"","ecm":"nov 2026","ecmIso":"2026-11-01","cmu":""},
+      {"d":"apr 2026","ev":"Bakboord","type":"Twee daags feest op olof","cp":"Willem","ver":"","ecm":"dec 2026","ecmIso":"2026-12-01","cmu":""},
+      {"d":"mei 2026","ev":"Studentenbevrijdingsfestival","type":"","cp":"Willem","ver":"","ecm":"jan 2027","ecmIso":"2027-01-01","cmu":""},
+      {"d":"mei 2026","ev":"Nos Ipse","type":"","cp":"Willem","ver":"Maastricht","ecm":"jan 2027","ecmIso":"2027-01-01","cmu":""},
+      {"d":"mei 2026","ev":"Zuiderlicht","type":"","cp":"Willem","ver":"Maastricht","ecm":"jan 2027","ecmIso":"2027-01-01","cmu":""}
+    ],
+    "overig": [
+      {"d":"feb 2026","ev":"Skiën","type":"Skiën","cp":"–","ver":"–","ecm":"nov 2026","ecmIso":"2026-11-01","cmu":""},
+      {"d":"dec 2026","ev":"Almanak","type":"Almanak gear","cp":"–","ver":"–","ecm":"sep 2026","ecmIso":"2026-09-01","cmu":""},
+      {"d":"dec 2026","ev":"Contact opnemen met de Varsity!","type":"Herinnering / Actie","cp":"–","ver":"–","ecm":"1 sep 2026","ecmIso":"2026-09-01","cmu":""},
+      {"d":"aug 2026","ev":"Ontgroeningen/KMT's","type":"Ontgroening","cp":"","ver":"","ecm":"mei 2027","ecmIso":"2027-05-01","cmu":""}
+    ]
+  },
+
+  "eventTitles": {
+    "amsterdam": "Amsterdam",
+    "rotterdam": "Rotterdam",
+    "utrecht": "Utrecht",
+    "delft": "Delft & Den Haag",
+    "groningen": "Groningen & Leeuwarden",
+    "zuid": "Zuid-Nederland",
+    "overig": "Overig & Landelijk"
+  },
+
+  "eventNotes": {
+    "amsterdam": ["Nereus activiteiten!!"]
+  },
+
+  "keyResults": [
+    "Bezoeklijst, contactgegevens en routeplanning volledig uitgewerkt vóór 1 september",
+    "Lijst met alle grote leads van afgelopen jaren — als eerste contact leggen bij bestuurswissel",
+    "Persoonlijk 6 verenigingen bezocht in 4 steden",
+    "80% van de bezochte verenigingen heeft een follow-up afspraak staan",
+    "Bezoeken vastgelegd met content (foto/video) — creative manager mee"
+  ],
+
+  "cityManagers": {
+    "groningen": "Barend",
+    "amsterdam": "Stijn Damen",
+    "rotterdam": "Tom",
+    "utrecht": "Jibbe",
+    "delft": "Iano",
+    "zuid": "Willem"
+  },
+
+  "cityManagerFields": [
+    {"k": "af", "label": "Afgelopen week geclosed"},
+    {"k": "aan", "label": "Aankomende week geclosed"},
+    {"k": "maand", "label": "Aankomende maand geclosed"},
+    {"k": "proj", "label": "Projecten"}
+  ],
+
+  "cityManagerEmptyRecord": {"af": "", "aan": "", "maand": "", "proj": "", "issues": "", "lost": "", "upd": ""}
+}
