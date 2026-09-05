@@ -43,35 +43,39 @@ export function BestuurEditor({ cid, naam }: { cid: string; naam: string }) {
             disabled={!editMode}
             onChange={(e) => update(i, 'naam', e.target.value)}
             placeholder="Naam"
-            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70"
+            aria-label={`Naam bestuurslid ${i + 1}`}
+            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70 focus-visible:ring-2 focus-visible:ring-blue"
           />
           <input
             value={lid.functie}
             disabled={!editMode}
             onChange={(e) => update(i, 'functie', e.target.value)}
             placeholder="Functie"
-            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70"
+            aria-label={`Functie bestuurslid ${i + 1}`}
+            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70 focus-visible:ring-2 focus-visible:ring-blue"
           />
           <input
             value={lid.tel}
             disabled={!editMode}
             onChange={(e) => update(i, 'tel', e.target.value)}
             placeholder="Tel"
-            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70"
+            aria-label={`Telefoon bestuurslid ${i + 1}`}
+            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70 focus-visible:ring-2 focus-visible:ring-blue"
           />
           <input
             value={lid.mail}
             disabled={!editMode}
             onChange={(e) => update(i, 'mail', e.target.value)}
             placeholder="Mail"
-            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70 max-[920px]:col-span-2"
+            aria-label={`E-mail bestuurslid ${i + 1}`}
+            className="rounded-s border border-line bg-surface2 px-2.5 py-1.5 text-xs disabled:opacity-70 max-[920px]:col-span-2 focus-visible:ring-2 focus-visible:ring-blue"
           />
           {editMode && (
             <button
               type="button"
               onClick={() => remove(i)}
               aria-label="Bestuurslid verwijderen"
-              className="rounded-s border border-line text-accent hover:border-accent hover:bg-accent-lightest"
+              className="rounded-s border border-line text-accent hover:border-accent hover:bg-accent-lightest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
             >
               ×
             </button>
@@ -82,7 +86,7 @@ export function BestuurEditor({ cid, naam }: { cid: string; naam: string }) {
         <button
           type="button"
           onClick={add}
-          className="mt-1 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:border-ink hover:text-ink"
+          className="mt-1 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:border-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
         >
           + Bestuurslid toevoegen
         </button>

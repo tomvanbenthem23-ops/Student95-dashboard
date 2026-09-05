@@ -60,9 +60,9 @@ export default function OverviewPage() {
       <div className="mb-[22px] grid grid-cols-2 gap-[22px] max-[860px]:grid-cols-1">
         <KeyResults />
         <div className="rounded-m border border-line bg-surface p-6 shadow-s95">
-          <h3 className="mb-3.5 text-[16px] text-ink">
+          <h2 className="mb-3.5 text-[16px] text-ink">
             <Editable storeKey="txt_ov_tl_titel" fallback="Tijdlijn — waarom nu" />
-          </h3>
+          </h2>
           <EditableList
             storeKey="list_ov_tl"
             fallback={TIJDLIJN_DEFAULT}
@@ -73,9 +73,9 @@ export default function OverviewPage() {
 
       <div className="mb-[22px] grid grid-cols-2 gap-[22px] max-[860px]:grid-cols-1">
         <div className="rounded-m border border-line bg-surface p-6 shadow-s95">
-          <h3 className="mb-3.5 text-[16px] text-ink">
+          <h2 className="mb-3.5 text-[16px] text-ink">
             <Editable storeKey="txt_ov_hkb_titel" fallback="Hoe kom je binnen" />
-          </h3>
+          </h2>
           <EditableList
             storeKey="list_ov_hkb"
             fallback={HKB_DEFAULT}
@@ -83,9 +83,9 @@ export default function OverviewPage() {
           />
         </div>
         <div className="rounded-m border border-line bg-surface p-6 shadow-s95">
-          <h3 className="mb-3.5 text-[16px] text-ink">
+          <h2 className="mb-3.5 text-[16px] text-ink">
             <Editable storeKey="txt_ov_chk_titel" fallback="Bezoek-checklist" />
-          </h3>
+          </h2>
           <EditableList
             storeKey="list_ov_chk"
             fallback={CHECKLIST_DEFAULT}

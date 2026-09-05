@@ -21,7 +21,8 @@ export function StatusSelect({ cid, naam }: { cid: string; naam: string }) {
     <select
       value={idx}
       onChange={(e) => set(statusKey(cid, naam), Number(e.target.value))}
-      className={`w-full rounded-s border px-2.5 py-2 text-[13px] ${STAGE_CLASS[idx] ?? STAGE_CLASS[0]}`}
+      aria-label={`Status voor ${naam}`}
+      className={`w-full rounded-s border px-2.5 py-2 text-[13px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue ${STAGE_CLASS[idx] ?? STAGE_CLASS[0]}`}
     >
       {STATUSES.map((s, i) => (
         <option key={i} value={i}>

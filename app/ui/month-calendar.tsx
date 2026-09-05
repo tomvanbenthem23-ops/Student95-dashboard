@@ -58,25 +58,27 @@ export function MonthCalendar() {
         <button
           type="button"
           onClick={() => shift(-1)}
-          className="flex h-[30px] w-[30px] flex-none items-center justify-center rounded-full border border-line2 text-navy hover:border-blue hover:bg-[#f2f5fe] hover:text-blue"
+          aria-label="Vorige maand"
+          className="flex h-[30px] w-[30px] flex-none items-center justify-center rounded-full border border-line2 text-navy hover:border-blue hover:bg-[#f2f5fe] hover:text-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
         >
-          ‹
+          <span aria-hidden="true">‹</span>
         </button>
-        <h3 className="mx-1 font-display text-[21px] text-navy">
+        <h2 className="mx-1 font-display text-[21px] text-navy">
           {MONTH_LABELS[cur.m]} {cur.y}
-        </h3>
+        </h2>
         <button
           type="button"
           onClick={() => shift(1)}
-          className="flex h-[30px] w-[30px] flex-none items-center justify-center rounded-full border border-line2 text-navy hover:border-blue hover:bg-[#f2f5fe] hover:text-blue"
+          aria-label="Volgende maand"
+          className="flex h-[30px] w-[30px] flex-none items-center justify-center rounded-full border border-line2 text-navy hover:border-blue hover:bg-[#f2f5fe] hover:text-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
         >
-          ›
+          <span aria-hidden="true">›</span>
         </button>
         {!isNow && (
           <button
             type="button"
             onClick={() => setCur({ y: now.getFullYear(), m: now.getMonth() })}
-            className="rounded-full bg-blue px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white"
+            className="rounded-full bg-blue px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
           >
             Vandaag
           </button>
@@ -87,7 +89,8 @@ export function MonthCalendar() {
             const [y, m] = e.target.value.split('-').map(Number);
             setCur({ y, m: m - 1 });
           }}
-          className="rounded-full border border-line2 bg-surface px-3 py-1.5 text-[12.5px] font-medium"
+          aria-label="Spring naar maand"
+          className="rounded-full border border-line2 bg-surface px-3 py-1.5 text-[12.5px] font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
         >
           {!counts.has(curKey) && <option value={curKey}>{MONTH_LABELS[cur.m]} {cur.y}</option>}
           {monthOptions.map(([k, n]) => {
@@ -132,9 +135,9 @@ export function MonthCalendar() {
 
       {withoutMonth.length > 0 && (
         <div className="mt-5 border-t border-line2 pt-3.5">
-          <h4 className="mb-2 text-[10.5px] font-bold uppercase tracking-wide text-muted">
+          <h3 className="mb-2 text-[10.5px] font-bold uppercase tracking-wide text-muted">
             Zonder maand
-          </h4>
+          </h3>
           <table className="w-full border-collapse text-[13px]">
             <tbody>
               {withoutMonth.map((r) => (

@@ -10,16 +10,19 @@ const EMPTY: EventItem = { d: '', ev: '', type: '', cp: '', ver: '', ecm: '', ec
 function EventInput({
   value,
   onChange,
+  label,
 }: {
   value: string;
   onChange: (v: string) => void;
+  label: string;
 }) {
   return (
     <textarea
       value={value}
       onChange={(e) => onChange(e.target.value)}
       rows={1}
-      className="w-full resize-none rounded-s border border-transparent bg-transparent px-1.5 py-1 text-[13px] leading-snug hover:border-line focus:border-ink focus:bg-surface2 focus:outline-none"
+      aria-label={label}
+      className="w-full resize-none rounded-s border border-transparent bg-transparent px-1.5 py-1 text-[13px] leading-snug hover:border-line focus:border-ink focus:bg-surface2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue"
       onInput={(e) => {
         const el = e.currentTarget;
         el.style.height = 'auto';
@@ -52,7 +55,7 @@ export function EventTable({ cid }: { cid: string }) {
 
   return (
     <div className="my-[22px] rounded-m border border-line bg-surface p-6 shadow-s95">
-      <h3 className="mb-3.5 text-[16px] text-ink">Eventkalender</h3>
+      <h2 className="mb-3.5 text-[16px] text-ink">Eventkalender</h2>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[820px] border-collapse text-[13px]">
           <thead>
@@ -73,10 +76,10 @@ export function EventTable({ cid }: { cid: string }) {
               return (
                 <tr key={i} className={due ? 'bg-navy-lightest' : undefined}>
                   <td className={`border-b border-line py-1 pl-1.5 align-top ${due ? 'shadow-[inset_3px_0_0_var(--navy)]' : ''}`}>
-                    <EventInput value={e.d} onChange={(v) => update(i, 'd', v)} />
+                    <EventInput label={`Datum, rij ${i + 1}`} value={e.d} onChange={(v) => update(i, 'd', v)} />
                   </td>
                   <td className="border-b border-line py-1 align-top">
-                    <EventInput value={e.ev} onChange={(v) => update(i, 'ev', v)} />
+                    <EventInput label={`Evenement, rij ${i + 1}`} value={e.ev} onChange={(v) => update(i, 'ev', v)} />
                     {due && (
                       <span className="ml-1 inline-block rounded-full bg-navy px-2 py-0.5 text-[10px] font-bold uppercase text-white">
                         actie
@@ -84,26 +87,26 @@ export function EventTable({ cid }: { cid: string }) {
                     )}
                   </td>
                   <td className="border-b border-line py-1 align-top">
-                    <EventInput value={e.type} onChange={(v) => update(i, 'type', v)} />
+                    <EventInput label={`Type, rij ${i + 1}`} value={e.type} onChange={(v) => update(i, 'type', v)} />
                   </td>
                   <td className="border-b border-line py-1 align-top">
-                    <EventInput value={e.ver} onChange={(v) => update(i, 'ver', v)} />
+                    <EventInput label={`Vereniging, rij ${i + 1}`} value={e.ver} onChange={(v) => update(i, 'ver', v)} />
                   </td>
                   <td className="border-b border-line py-1 align-top">
-                    <EventInput value={e.cp} onChange={(v) => update(i, 'cp', v)} />
+                    <EventInput label={`Contactpersoon, rij ${i + 1}`} value={e.cp} onChange={(v) => update(i, 'cp', v)} />
                   </td>
                   <td className="border-b border-line py-1 align-top">
-                    <EventInput value={e.ecm} onChange={(v) => update(i, 'ecm', v)} />
+                    <EventInput label={`Eerste contactmoment, rij ${i + 1}`} value={e.ecm} onChange={(v) => update(i, 'ecm', v)} />
                   </td>
                   <td className="border-b border-line py-1 align-top">
-                    <EventInput value={e.cmu} onChange={(v) => update(i, 'cmu', v)} />
+                    <EventInput label={`CM update, rij ${i + 1}`} value={e.cmu} onChange={(v) => update(i, 'cmu', v)} />
                   </td>
                   <td className="border-b border-line py-1 align-top">
                     <button
                       type="button"
                       onClick={() => remove(i)}
                       aria-label="Event verwijderen"
-                      className="rounded-s px-1.5 text-[15px] text-faint hover:bg-accent-lightest hover:text-accent"
+                      className="rounded-s px-1.5 text-[15px] text-muted hover:bg-accent-lightest hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
                     >
                       ×
                     </button>
@@ -117,7 +120,7 @@ export function EventTable({ cid }: { cid: string }) {
       <button
         type="button"
         onClick={add}
-        className="mt-3 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:border-ink hover:text-ink"
+        className="mt-3 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:border-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
       >
         + Event toevoegen
       </button>

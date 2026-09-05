@@ -19,7 +19,7 @@ export function TotalsTable({
 
   return (
     <div className="mb-6 overflow-x-auto rounded-m border border-line bg-surface p-6 shadow-s95">
-      <h3 className="mb-3.5 text-[16px] text-ink">Pijplijn per city manager</h3>
+      <h2 className="mb-3.5 text-[16px] text-ink">Pijplijn per city manager</h2>
       <table className="w-full min-w-[640px] border-collapse text-[13px]">
         <thead>
           <tr className="text-left text-[10.5px] uppercase tracking-wide text-muted">
@@ -39,7 +39,7 @@ export function TotalsTable({
               {r.perField.map((s, i) => (
                 <td key={i} className="border-b border-line py-2 pr-3 text-right whitespace-nowrap">
                   {euro(s.bedrag)}
-                  <span className="block text-[10.5px] font-normal text-faint">
+                  <span className="block text-[10.5px] font-normal text-muted">
                     {s.aantal} deal(s)
                   </span>
                 </td>

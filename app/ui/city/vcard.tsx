@@ -33,7 +33,7 @@ export function VCard({ cid, seed }: { cid: string; seed: Vereniging }) {
     >
       <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,1.6fr)_200px] items-start gap-4 max-[920px]:grid-cols-1">
         <div>
-          <div className="text-[16px] font-bold">{merged.naam}</div>
+          <h3 className="text-[16px] font-bold">{merged.naam}</h3>
           <div className="my-1.5 flex flex-wrap gap-1.5">
             <span className="rounded-full border border-blue-lightest bg-[#f2f5fe] px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wide text-blue">
               {merged.type}
@@ -107,8 +107,9 @@ export function VCard({ cid, seed }: { cid: string; seed: Vereniging }) {
             value={note}
             onChange={(e) => set(nKey, e.target.value)}
             placeholder="Notitie…"
+            aria-label={`Notitie voor ${merged.naam}`}
             rows={2}
-            className="mt-2 w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-xs focus:border-ink focus:bg-surface focus:outline-none"
+            className="mt-2 w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-xs focus:border-ink focus:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-blue"
           />
         </div>
       </div>

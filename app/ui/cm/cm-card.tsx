@@ -23,12 +23,12 @@ export function CmCard({ city }: { city: City }) {
     >
       <div className="mb-3.5 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <div className="font-display text-[20px] leading-tight text-navy">
+          <h2 className="font-display text-[20px] leading-tight text-navy">
             {city.naam}
-          </div>
+          </h2>
         </div>
         {record.upd && (
-          <span className="text-[11px] text-faint">Laatst bijgewerkt: {record.upd}</span>
+          <span className="text-[11px] text-muted">Laatst bijgewerkt: {record.upd}</span>
         )}
       </div>
 
@@ -42,7 +42,8 @@ export function CmCard({ city }: { city: City }) {
               value={(record[v.k as keyof CityManagerRecord] as string) ?? ''}
               onChange={(e) => update(v.k as keyof CityManagerRecord, e.target.value)}
               rows={2}
-              className="w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-[13px] focus:border-blue focus:bg-surface focus:outline-none"
+              aria-label={`${v.label} — ${city.naam}`}
+              className="w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-[13px] focus:border-blue focus:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-blue"
             />
           </div>
         ))}
@@ -62,7 +63,8 @@ export function CmCard({ city }: { city: City }) {
             value={record.issues ?? ''}
             onChange={(e) => update('issues', e.target.value)}
             rows={2}
-            className="w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-[13px] focus:border-blue focus:bg-surface focus:outline-none"
+            aria-label={`Issues — ${city.naam}`}
+            className="w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-[13px] focus:border-blue focus:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-blue"
           />
         </div>
         <div>
@@ -78,7 +80,8 @@ export function CmCard({ city }: { city: City }) {
             value={record.lost ?? ''}
             onChange={(e) => update('lost', e.target.value)}
             rows={2}
-            className="w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-[13px] focus:border-blue focus:bg-surface focus:outline-none"
+            aria-label={`Lost — ${city.naam}`}
+            className="w-full rounded-s border border-line bg-surface2 px-2.5 py-2 text-[13px] focus:border-blue focus:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-blue"
           />
         </div>
       </div>

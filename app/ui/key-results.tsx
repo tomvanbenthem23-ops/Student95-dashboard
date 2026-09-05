@@ -33,7 +33,7 @@ export function KeyResults() {
 
   return (
     <div className="rounded-m border border-line bg-surface p-6 shadow-s95">
-      <h3 className="mb-3.5 text-[16px] text-ink">Key results (Objective 2)</h3>
+      <h2 className="mb-3.5 text-[16px] text-ink">Key results (Objective 2)</h2>
       {items.map((text, i) => (
         <div
           key={i}
@@ -68,7 +68,7 @@ export function KeyResults() {
           {editMode && (
             <button
               type="button"
-              className="edonly ml-auto self-start text-xs text-accent"
+              className="edonly ml-auto self-start text-xs text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
               onClick={() => removeItem(i)}
               aria-label="Key result verwijderen"
             >
@@ -81,7 +81,7 @@ export function KeyResults() {
         <button
           type="button"
           onClick={addItem}
-          className="edonly mt-3 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:border-ink hover:text-ink"
+          className="edonly mt-3 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:border-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
         >
           + Regel toevoegen
         </button>

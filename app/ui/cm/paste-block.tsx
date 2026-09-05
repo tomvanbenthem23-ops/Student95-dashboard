@@ -65,19 +65,21 @@ export function PasteBlock() {
 
   return (
     <div className="mb-6 rounded-m border border-line bg-surface p-6 shadow-s95">
-      <h3 className="mb-3 text-[16px] text-ink">Wekelijkse update verwerken</h3>
+      <h2 className="mb-3 text-[16px] text-ink">Wekelijkse update verwerken</h2>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder={PLACEHOLDER}
+        aria-label="Wekelijkse WhatsApp-update"
         rows={6}
-        className="w-full rounded-m border border-line2 bg-surface2 px-3.5 py-3 text-[13px] leading-relaxed focus:border-blue focus:bg-surface focus:outline-none"
+        className="w-full rounded-m border border-line2 bg-surface2 px-3.5 py-3 text-[13px] leading-relaxed focus:border-blue focus:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-blue"
       />
       <div className="mt-2.5 flex flex-wrap items-center gap-2.5">
         <select
           value={manualCid}
           onChange={(e) => setManualCid(e.target.value)}
-          className="rounded-full border border-line2 bg-surface px-3.5 py-2 text-[12.5px] font-medium"
+          aria-label="Kies handmatig een city manager"
+          className="rounded-full border border-line2 bg-surface px-3.5 py-2 text-[12.5px] font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
         >
           <option value="">City manager automatisch herkennen</option>
           {CITIES.map((c) => (
@@ -89,7 +91,7 @@ export function PasteBlock() {
         <button
           type="button"
           onClick={verwerk}
-          className="rounded-full bg-navy px-4 py-2 text-[12.5px] font-semibold text-white hover:bg-navy-2"
+          className="rounded-full bg-navy px-4 py-2 text-[12.5px] font-semibold text-white hover:bg-navy-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
         >
           Update verwerken
         </button>

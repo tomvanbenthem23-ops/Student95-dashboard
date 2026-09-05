@@ -164,7 +164,7 @@ export function EditableList({
             {editMode && (
               <button
                 type="button"
-                className="edonly text-accent text-xs px-1"
+                className="edonly text-accent text-xs px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
                 onClick={() => removeItem(i)}
                 aria-label="Regel verwijderen"
               >
@@ -179,7 +179,7 @@ export function EditableList({
           <button
             type="button"
             onClick={addItem}
-            className="mt-2 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:text-ink hover:border-ink"
+            className="mt-2 rounded-full border border-dashed border-line2 px-3 py-1 text-xs text-muted hover:text-ink hover:border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
           >
             + Regel toevoegen
           </button>

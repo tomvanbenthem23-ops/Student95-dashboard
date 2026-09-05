@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { antonSC, inter } from '@/app/ui/fonts';
 import { StoreProvider } from '@/app/lib/store';
-import { Header } from '@/app/ui/header';
+import { AppShell } from '@/app/ui/app-shell';
 import './ui/global.css';
 
 export const metadata: Metadata = {
@@ -17,10 +17,7 @@ export default function RootLayout({
     <html lang="nl" className={`${inter.variable} ${antonSC.variable}`}>
       <body className="font-sans text-[15px] leading-[1.55] text-ink">
         <StoreProvider>
-          <Header />
-          <main className="mx-auto max-w-[1220px] px-8 pb-20 pt-9">
-            {children}
-          </main>
+          <AppShell>{children}</AppShell>
         </StoreProvider>
       </body>
     </html>
